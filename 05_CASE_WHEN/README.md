@@ -1,45 +1,69 @@
-# CASE WHEN in SQL
+# CASE WHEN
 
 ## Overview
 
-CASE WHEN brings decision-making logic into SQL queries.
+CASE WHEN allows conditional logic inside SQL queries.
 
-It works similarly to IF-ELSE statements in programming languages and is one of the most frequently used tools in Data Analytics.
+It is one of the most important SQL concepts used in Data Analytics because it helps transform raw data into meaningful business categories.
+
+Think of CASE WHEN as SQL's version of IF-ELSE statements.
 
 ---
 
 ## Why CASE WHEN Matters
 
-In real business scenarios, raw data often needs to be transformed into meaningful categories.
+Business users rarely want raw values.
 
-Examples:
+They want categories such as:
 
-- Customer Segments
-- Employee Levels
-- Risk Categories
-- Product Categories
-- Revenue Bands
+- High Value Customer
+- Low Value Customer
+- Active User
+- Inactive User
+- Large Department
+- Small Department
 
-CASE WHEN allows us to create those labels directly inside SQL.
+CASE WHEN makes this possible directly inside SQL.
+
+---
+
+## Syntax
+
+```sql
+CASE
+    WHEN condition1 THEN result1
+    WHEN condition2 THEN result2
+    ELSE result3
+END
+```
 
 ---
 
 ## Topics Covered
 
 ### Basic CASE WHEN
-Simple conditional labels.
+
+Employee manager status classification.
 
 ### Department Categorization
-Classifying departments by employee count.
+
+Classifying departments as:
+
+- Large
+- Medium
+- Small
 
 ### City Analysis
-Categorizing cities based on business rules.
+
+Classifying cities based on department concentration.
 
 ### Employee Labelling
-Creating readable employee categories.
 
-### Business Rules
-Using CASE WHEN to implement company logic.
+Creating readable employee location labels.
+
+### Business Rule Implementation
+
+Employee seniority categorization.
 
 ---
 
@@ -53,33 +77,80 @@ Using CASE WHEN to implement company logic.
 
 ---
 
-## Interview Importance
+## Business Applications
 
-CASE WHEN is one of the most commonly asked SQL topics for:
-
-- Data Analyst
-- Business Analyst
-- Data Scientist
-- Analytics Engineer
-
----
-
-## Common Applications
+CASE WHEN is commonly used for:
 
 - Customer Segmentation
-- Employee Classification
 - Revenue Bucketing
+- Employee Classification
 - KPI Reporting
-- Conditional Aggregation
+- Risk Categorization
+- Dashboard Metrics
 
 ---
 
-## Schema Used
+## Common Mistakes
 
-employes
-    │
-    
-departments
-    │
-    
-locations
+### Missing ELSE
+
+```sql
+CASE
+    WHEN condition THEN value
+END
+```
+
+Always prefer:
+
+```sql
+CASE
+    WHEN condition THEN value
+    ELSE other_value
+END
+```
+
+### Incorrect Condition Order
+
+CASE evaluates conditions from top to bottom.
+
+The first TRUE condition is returned.
+
+---
+
+## Interview Questions
+
+### What is CASE WHEN?
+
+A conditional expression that returns values based on specified conditions.
+
+### Does CASE stop after the first TRUE condition?
+
+Yes.
+
+### Can CASE be used with aggregate functions?
+
+Yes.
+
+Examples:
+
+- COUNT()
+- SUM()
+- AVG()
+
+---
+
+## Files
+
+```text
+01_Basic_CASE_WHEN
+02_Department_Categorization
+03_City_Analysis
+04_Employee_Labelling
+05_Business_Rules
+```
+
+---
+
+## Key Takeaway
+
+CASE WHEN transforms raw data into business-friendly information and is one of the most frequently used SQL features in Data Analytics.
