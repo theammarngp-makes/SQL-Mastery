@@ -1,13 +1,16 @@
 SQL Cheat Sheet
 
-SQL Execution Order (Usual order for a query)
-1. SELECT
-2. FROM
+SQL Execution Order
+
+1. FROM
+2. JOIN
 3. WHERE
 4. GROUP BY
 5. HAVING
-6. ORDER BY
-7. LIMIT
+6. SELECT
+7. DISTINCT
+8. ORDER BY
+9. LIMIT
 
 ----------------
 
